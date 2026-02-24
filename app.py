@@ -272,9 +272,9 @@ with tab2:
     det_check = np.log(abs(float(b)))
 
     m1, m2, m3 = st.columns(3)
-    m1.metric("λ1", f"{lam1:.6f}")
-    m2.metric("λ2", f"{lam2:.6f}")
-    m3.metric("λ1+λ2 ; log|b|", f"{(lam1+lam2):.6f} ; {det_check:.6f}")
+m1.metric("λ1", f"{lam1:.6f}")
+m2.metric("λ2", f"{lam2:.6f}")
+m3.metric("λ1+λ2 ; log|b|", f"{(lam1+lam2):.6f} ; {det_check:.6f}")
 
     fig = plt.figure()
     plt.scatter(xs[:30000], ys[:30000], s=1)
@@ -290,4 +290,5 @@ with tab2:
     st.dataframe(df2.head(10), use_container_width=True)
     csv2 = df2.to_csv(index=False).encode("utf-8")
     st.download_button("Download CSV", data=csv2, file_name="henon_trajectory.csv", mime="text/csv")
+
 
